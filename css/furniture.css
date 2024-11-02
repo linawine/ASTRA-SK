@@ -1,0 +1,134 @@
+.furniture {
+    margin-top: 20px;
+}
+
+.furniture-title {
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.comapny-object__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.company-object__list {
+    display: flex;
+    column-gap: 35px;
+    flex-wrap: wrap;
+    row-gap: 25px;
+}
+
+.furniture-text {
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.furniture-object__item {
+    cursor: pointer;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+li.furniture-object__item.list__item.active {
+    border-bottom: 1px solid #2D2D2D;
+    color: #2D2D2D;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.furniture-slider {
+    padding-top: 20px;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.swiper-slide-furniture img {
+    width: 100%;
+}
+
+.furniture-text-info {
+    padding-top: 20px;
+    font-weight: 400;
+}
+
+.pluses-work {
+    margin-top: 60px;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), url(../img/furniture/pluses-work.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pluses-work-title {
+    font-size: 28px;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.pluses-work-slider {
+    padding-top: 20px;
+}
+
+.swiper-wrapper-pluses-work {
+    height: 300px;
+}
+
+.swiper-slide-pluses-work {
+    width: 386px;
+    height: fit-content;
+}
+
+.swiper-slide-pluses-work-content {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+.swiper-slide-pluses-work-content img {
+    width: 21px;
+    height: 21px;
+}
+
+.swiper-slide-pluses-work-text {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.swiper-button-prev-furniture,
+.swiper-button-next-furniture {
+    position: absolute;
+    top: 55%;
+    transform: none;
+    background-color: #F2F2F2;
+    color: #282828;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+}
+
+.swiper-button-prev-furniture.swiper-button-prev:after,
+.swiper-button-next-furniture.swiper-button-next:after {
+    font-size: 14px;
+}
+
+.swiper-button-next.swiper-button-next-furniture {
+    right: -21px;
+    z-index: 100;
+}
+
+.swiper-button-prev.swiper-button-prev-furniture {
+    left: -21px;
+    z-index: 100;
+}
