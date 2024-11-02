@@ -11,7 +11,80 @@
 </head>
 
 <body>
-    <?php require_once "block/header.php"; ?>
+    <div class="header open header-normal" id="header">
+        <main class="container">
+            <div class="header-inner header-inner-normal">
+                <a href="index.index" class="header-logo">
+                    <img src="./img/header/logo.svg" alt="Логотип Астра-Ск">
+                </a>
+                <nav class="header-menu">
+                    <nav class="header-menu-nav">
+                        <ul class="header-menu-list">
+                            <li class="header-menu-item">
+                                <a href="company.index" class="header-menu-link">
+                                    О компании
+                                </a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="object.index" class="header-menu-link">
+                                    Объекты
+                                </a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="contact.index" class="header-menu-link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                    <nav class="header-menu-contact">
+                        <ul class="header-menu-contact-list">
+                            <li class="header-menu-contact-item">
+                                <img src="./img/header/Phone.svg" alt="Номер телефона" width="20px" height="20px">
+                                <a href="tel:+79195698988">
+                                    <p>8 (919) 569 8988</p>
+                                </a>
+                            </li>
+                            <li class="header-menu-contact-item">
+                                <img src="./img/header/Letter.svg" alt="Почта" width="20px" height="20px">
+                                <a href="mailto:zsmstroika@mail.ru">
+                                    <p>zsmstroika@mail.ru</p>
+                                </a>
+                            </li>
+                            <li class="header-menu-contact-item">
+                                <button class="header-menu-contact-link" id="openRegistrationModalBtn">
+                                    Заказать звонок
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                    <nav class="header-social-contact">
+                        <ul class="header-social-contact-list">
+                            <li class="header-social-contact-item">
+                                <a href="#" class="header-social-contact-link">
+                                    Вконтакте
+                                </a>
+                            </li>
+                            <li class="header-social-contact-item">
+                                <a href="#" class="header-social-contact-link">
+                                    Telegram
+                                </a>
+                            </li>
+                            <li class="header-social-contact-item">
+                                <a href="#" class="header-social-contact-link">
+                                    WhatsApp
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </nav>
+                <button class="burger-menu-button" title="Title" type="button" id="burger">
+                </button>
+            </div>
+        </main>
+    </div>
 
     <section class="news-info">
         <div class="container">
@@ -118,7 +191,56 @@
         </div>
     </section>
 
-    <?php require_once "block/footer.php"; ?>
+    <footer class="footer">
+        <main class="container">
+            <div class="footer__inner">
+                <a href="index.php" class="footer__logo">
+                    <img src="./img/header/logo.svg" alt="Логотип сайтм Астра-ск">
+                </a>
+                <nav class="footer__menu">
+                    <ul class="footer__menu__list">
+                        <li class="footer__menu__item">
+                            <a href="company.index" class="footer__menu__link">
+                                О компании
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="object.index" class="footer__menu__link">
+                                Объекты
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="contact.index" class="footer__menu__link">
+                                Контакты
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="furniture.index" class="footer__menu__link">
+                                Производство мебели
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <div class="footer__contact-phone">
+                        <img src="./img/header/Phone.svg" alt="Номер телефона" width="20px" height="20px">
+                        <a href="tel:+79195698988">
+                            <p>8 (919) 569 8988</p>
+                        </a>
+                    </div>
+                    <div class="footer__contact-mail">
+                        <img src="./img/header/Letter.svg" alt="Почта" width="20px" height="20px">
+                        <a href="mailto:zsmstroika@mail.ru">
+                            <p>zsmstroika@mail.ru</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__text">
+                <p>Все права защищены. Политика конфиденциальности.</p>
+            </div>
+        </main>
+    </footer>
 
     <script defer src="./js/base.js"></script>
 </body>

@@ -15,24 +15,24 @@
     <div class="header open header-banner" id="header">
         <main class="container">
             <div class="header-inner">
-                <a href="index.php" class="header-logo">
+                <a href="index.html" class="header-logo">
                     <img src="./img/header/logo.svg" alt="Логотип Астра-Ск">
                 </a>
                 <nav class="header-menu">
                     <nav class="header-menu-nav">
                         <ul class="header-menu-list">
                             <li class="header-menu-item">
-                                <a href="company.php" class="header-menu-link">
+                                <a href="company.html" class="header-menu-link">
                                     О компании
                                 </a>
                             </li>
                             <li class="header-menu-item">
-                                <a href="object.php" class="header-menu-link">
+                                <a href="object.html" class="header-menu-link">
                                     Объекты
                                 </a>
                             </li>
                             <li class="header-menu-item">
-                                <a href="contact.php" class="header-menu-link">
+                                <a href="contact.html" class="header-menu-link">
                                     Контакты
                                 </a>
                             </li>
@@ -196,7 +196,7 @@
                             </p>
 
                             <button class="company-tabs-btn blue-btn" type="button"
-                                onclick="location.href='./company.php'" autofocus>
+                                onclick="location.href='./company.html'" autofocus>
                                 Больше информации о команде
                             </button>
                         </div>
@@ -217,7 +217,7 @@
                             </p>
 
                             <button class="company-tabs-btn blue-btn" type="button"
-                                onclick="location.href='./company.php'">
+                                onclick="location.href='./company.html'">
                                 Больше информации о команде
                             </button>
                         </div>
@@ -460,7 +460,56 @@
         </div>
     </section>
 
-    <?php require_once "block/footer.php"; ?>
+    <footer class="footer">
+        <main class="container">
+            <div class="footer__inner">
+                <a href="index.html" class="footer__logo">
+                    <img src="./img/header/logo.svg" alt="Логотип сайтм Астра-ск">
+                </a>
+                <nav class="footer__menu">
+                    <ul class="footer__menu__list">
+                        <li class="footer__menu__item">
+                            <a href="company.html" class="footer__menu__link">
+                                О компании
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="object.html" class="footer__menu__link">
+                                Объекты
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="contact.html" class="footer__menu__link">
+                                Контакты
+                            </a>
+                        </li>
+                        <li class="footer__menu__item">
+                            <a href="furniture.html" class="footer__menu__link">
+                                Производство мебели
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer__contact">
+                    <div class="footer__contact-phone">
+                        <img src="./img/header/Phone.svg" alt="Номер телефона" width="20px" height="20px">
+                        <a href="tel:+79195698988">
+                            <p>8 (919) 569 8988</p>
+                        </a>
+                    </div>
+                    <div class="footer__contact-mail">
+                        <img src="./img/header/Letter.svg" alt="Почта" width="20px" height="20px">
+                        <a href="mailto:zsmstroika@mail.ru">
+                            <p>zsmstroika@mail.ru</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__text">
+                <p>Все права защищены. Политика конфиденциальности.</p>
+            </div>
+        </main>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
