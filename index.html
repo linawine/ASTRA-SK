@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <li class="header-menu-contact-item">
-                                <button class="header-menu-contact-link" id="openModalBtn1">
+                                <button class="header-menu-contact-link  section__button1">
                                     Заказать звонок
                                 </button>
                             </li>
@@ -118,7 +118,7 @@
                                     это позволяет  нам успешно реализовывать даже самые сложные и нестандартные проекты.
                                 </P>
                             </div>
-                            <button class="swiper-slide__button white-btn" type="button" autofocus id="openModalBtn2">
+                            <button class="swiper-slide__button white-btn section__button2" type="button" autofocus>
                                 Записаться на консультацию
                             </button>
                         </div>
@@ -136,7 +136,7 @@
                                     это позволяет  нам успешно реализовывать даже самые сложные и нестандартные проекты.
                                 </P>
                             </div>
-                            <button class="swiper-slide__button white-btn" type="button" autofocus>
+                            <button class="swiper-slide__button white-btn section__button2" type="button" autofocus>
                                 Записаться на консультацию
                             </button>
                         </div>
@@ -154,7 +154,7 @@
                                     это позволяет  нам успешно реализовывать даже самые сложные и нестандартные проекты.
                                 </P>
                             </div>
-                            <button class="swiper-slide__button white-btn" type="button" autofocus>
+                            <button class="swiper-slide__button white-btn section__button2" type="button" autofocus>
                                 Записаться на консультацию
                             </button>
                         </div>
@@ -417,7 +417,7 @@
                         </div>
                     </div>
                     <div class="swiper-button-prev swiper-button-prev-project"></div>
-                        <div class="swiper-button-next swiper-button-next-project"></div>
+                    <div class="swiper-button-next swiper-button-next-project"></div>
                 </div>
             </div>
         </div>
@@ -434,21 +434,32 @@
                         Мы перезвоним и расскажем о направлениях недвижимости.
                     </div>
                     <div class="feedback-wrapper-form">
-                        <form action="">
-                            <div class="input-box">
-                                <input type="text" placeholder="Ваше имя" required>
-                            </div>
-                            <div class="input-box">
-                                <input type="tel" placeholder="Номер телефона" required>
-                            </div>
-                            <div class="input-box" id="comment" class="comment">
-                                <input type="text" placeholder="Коментарий" required>
-                            </div>
+                        <form action="" novalidate data-js-form>
+                            <p class="field">
+                                <input class="name__control" id="userName" type="text" name="userName"
+                                    placeholder="Ваше имя" required minlength="3" maxlength="12"
+                                    aria-errormessage="userName-errors" title="Введите корректное имя">
+                                <span class="field__errors" id="userName-errors" data-js-form-field-errors></span>
+                            </p>
+                            <p class="field">
+                                <input class="field__control" id="userTel" type="tel" name="userTel"
+                                    placeholder="Номер телефона" required minlength="10" maxlength="11"
+                                    aria-errormessage="userTel-errors" title="Введите корректный номер телефона">
+                                <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+                            </p>
+                            <p class="field">
+                                <input class="field__control" id="userCom" type="text" name="userCom"
+                                    placeholder="Комментарий" minlength="7" maxlength="50"
+                                    aria-errormessage="userCom-errors">
+                                <span class="field__errors" id="userCom-errors" data-js-form-field-errors></span>
+                            </p>
                             <button class="feedback-btn blue-btn" type="submit">Отправить</button>
-                            <div class="remember">
-                                <label for=""><input type="checkbox">Я ознакомлен и согласен с политикой
-                                    конфиденциальности</label>
-                            </div>
+                            <p class="field field-check">
+                                <input class="field__control check__control" id="userCheck" type="checkbox"
+                                    name="userCheck" required aria-errormessage="userCheck-errors">
+                                Я ознакомлен и согласен с политикой конфиденциальности<br>
+                                <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
+                            </p>
                         </form>
                     </div>
                 </div>
@@ -510,6 +521,83 @@
             </div>
         </main>
     </footer>
+    
+      <div class="modal modal1">
+        <div class="modal__main">
+          <button class="modal__close"><img src="./img/header/burger-close.svg" alt=""></button>
+          <h2 class="modal__title">Заказать обратный звонок</h2>
+          <p class="modal__subtitle">Укажите данные и наш менеджер свяжется с Вами в ближайшее время.</p>
+          
+          <form action="" novalidate data-js-form>
+            <p class="field">
+                <input class="name__control" id="userName" type="text" name="userName"
+                    placeholder="Ваше имя" required minlength="3" maxlength="12"
+                    aria-errormessage="userName-errors" title="Введите корректное имя">
+                <span class="field__errors" id="userName-errors" data-js-form-field-errors></span>
+            </p>
+            <p class="field">
+                <input class="field__control" id="userTel" type="tel" name="userTel"
+                    placeholder="Номер телефона" required minlength="10" maxlength="11"
+                    aria-errormessage="userTel-errors" title="Введите корректный номер телефона">
+                <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+            </p>
+            <p class="field">
+                <input class="field__control" id="userCom" type="text" name="userCom"
+                    placeholder="Комментарий" minlength="7" maxlength="50"
+                    aria-errormessage="userCom-errors">
+                <span class="field__errors" id="userCom-errors" data-js-form-field-errors></span>
+            </p>
+            <button class="feedback-btn blue-btn" type="submit">Отправить</button>
+            <p class="field field-check">
+                <input class="field__control check__control" id="userCheck" type="checkbox"
+                    name="userCheck" required aria-errormessage="userCheck-errors">
+                Я ознакомлен и согласен с политикой конфиденциальности<br>
+                <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
+            </p>
+        </form>
+        </div>
+      </div>
+    
+      <div class="modal modal2">
+        <div class="modal__main">
+            <button class="modal__close"><img src="./img/header/burger-close.svg" alt=""></button>
+          <h2 class="modal__title">Модальное окно 2</h2>
+          
+          <form action="" novalidate data-js-form>
+            <p class="field">
+                <input class="name__control" id="userName" type="text" name="userName"
+                    placeholder="Ваше имя" required minlength="3" maxlength="12"
+                    aria-errormessage="userName-errors" title="Введите корректное имя">
+                <span class="field__errors" id="userName-errors" data-js-form-field-errors></span>
+            </p>
+            <p class="field">
+                <input class="field__control" id="userTel" type="tel" name="userTel"
+                    placeholder="+7 (000) 000 00-00" required minlength="10" maxlength="11"
+                    aria-errormessage="userTel-errors" title="Введите корректный номер телефона">
+                <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+            </p>
+            <p class="field">
+                <input class="field__control" id="userTel" type="email" name="userTel"
+                    placeholder="Example@gmail.com" required minlength="7" maxlength="30"
+                    aria-errormessage="userTel-errors" title="Введите корректную почту" pattern="^\S+@\S+\.\S+$">
+                <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+            </p>
+            <p class="field">
+                <input class="field__control" id="userCom" type="text" name="userCom"
+                    placeholder="Комментарий" minlength="7" maxlength="50"
+                    aria-errormessage="userCom-errors">
+                <span class="field__errors" id="userCom-errors" data-js-form-field-errors></span>
+            </p>
+            <button class="feedback-btn blue-btn" type="submit">Отправить</button>
+            <p class="field field-check">
+                <input class="field__control check__control" id="userCheck" type="checkbox"
+                    name="userCheck" required aria-errormessage="userCheck-errors">
+                Я ознакомлен и согласен с политикой конфиденциальности<br>
+                <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
+            </p>
+        </form>
+            </div>
+      </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>

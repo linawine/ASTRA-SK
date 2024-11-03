@@ -168,3 +168,21 @@ var swiperaad = new Swiper(".mySwiperLicenses", {
     },
     spaceBetween: 20
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var swipedsdr = new Swiper('.mySwiperVacancy', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        enabled: true,
+        slidesPerView: 1,
+        breakpoints: {
+            900: {
+                slidesPerView: 1,
+                enabled: false
+            }
+        }
+    });
+});

@@ -476,6 +476,10 @@ ol.vacancy-tab-list li {
     font-size: 18px;
 }
 
+.swiper.mySwiperVacancy.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+    display: none;
+}
+
 /* vacancy-tabs-block */
 
 .news {

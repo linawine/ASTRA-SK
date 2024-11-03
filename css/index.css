@@ -420,51 +420,46 @@ li.company-object__item.list__item.active {
     flex-shrink: 1;
 }
 
-.feedback-wrapper-form .input-box {
+.feedback-wrapper-form .field {
     width: 100%;
 }
 
-.input-box input {
+.field input {
     width: 100%;
     height: auto;
     background-color: #FAFAFA;
     padding: 10px 0 10px 10px;
 }
 
-.input-box {
+.field {
     padding-bottom: 10px;
 }
 
-.input-box input::placeholder {
+.field input::placeholder {
     color: var(--color-dark);
     font-weight: 400;
-}
-
-#comment {
-    height: 70px;
-    background-color: #FAFAFA;
-    margin-bottom: 10px;
-}
-
-#comment::placeholder {
-    align-items: start;
 }
 
 .feedback-btn {
     width: 100%;
 }
 
-.remember {
+.check__control {
     padding-top: 10px;
 }
 
-.remember label {
+.field-check:not(:last-child) {
+    padding-top: 10px;
     display: flex;
+    column-gap: 10px;
     align-items: center;
 }
 
-.remember label input {
-    margin-right: 10px;
+.field-check input{
+    width: fit-content;
+}
+
+.field-check .check__control {
     width: 20px;
     height: 20px;
 }
@@ -478,3 +473,11 @@ li.company-object__item.list__item.active {
 .feedback-right img {
     flex-shrink: 0;
 }
+
+.field__errors {
+    color: red;
+}
+
+input.error {
+    border: 2px solid red; /* или другой стиль по вашему выбору */
+  }
