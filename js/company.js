@@ -44,46 +44,46 @@ var swiperSpecialists = new Swiper(".mySwiperSpecialists", {
 
 / Слайдер преимущества /
 
-var swiperdassad = new Swiper(".mySwiperAdvantages", {
-    breakpoints: {
-        200: {
-            slidesPerView: 1,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 20,
-
-        },
-        610: {
-            slidesPerView: 2,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 20,
-
-        },
-        890: {
-            slidesPerView: 3,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 20,
-
-        },
-        1070: {
-            slidesPerView: 4,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 20,
-
-        },
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    }
+let swiper = new Swiper(".mySwiperAdvantages", {  
+    breakpoints: {  
+        200: {  
+            slidesPerView: 1,  
+            grid: {  
+                rows: 2,  
+            },  
+            spaceBetween: 20,  
+            enabled: true // Включить прокрутку для меньших экранов
+        },  
+        670: {  
+            slidesPerView: 2,  
+            grid: {  
+                rows: 2,  
+            },  
+            spaceBetween: 20,  
+            enabled: true // Включить прокрутку для меньших экранов
+        },  
+        890: {  
+            slidesPerView: 3,  
+            grid: {  
+                rows: 2,  
+            },  
+            spaceBetween: 20,  
+            enabled: true // Включить прокрутку для меньших экранов
+        },  
+        1070: {  
+            slidesPerView: 4,  
+            grid: {  
+                rows: 2,  
+            },  
+            spaceBetween: 20,  
+            enabled: false // Отключить прокрутку для экрана больше 1070px
+        },  
+    },  
+    spaceBetween: 20,  
+    navigation: {  
+        nextEl: ".swiper-button-next",  
+        prevEl: ".swiper-button-prev",  
+    }, 
 });
 
 / Слайдер лучшие сотрудники /

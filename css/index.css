@@ -164,9 +164,12 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
 }
 
 .company-tabs-block {
-    padding-top: 20px;
     font-size: 20px;
     text-align: justify;
+}
+
+.company-tabs-block p {
+    padding-top: 20px;
 }
 
 .company-block-text {
@@ -423,61 +426,3 @@ li.company-object__item.list__item.active {
 .feedback-wrapper-form .field {
     width: 100%;
 }
-
-.field input {
-    width: 100%;
-    height: auto;
-    background-color: #FAFAFA;
-    padding: 10px 0 10px 10px;
-}
-
-.field {
-    padding-bottom: 10px;
-}
-
-.field input::placeholder {
-    color: var(--color-dark);
-    font-weight: 400;
-}
-
-.feedback-btn {
-    width: 100%;
-}
-
-.check__control {
-    padding-top: 10px;
-}
-
-.field-check:not(:last-child) {
-    padding-top: 10px;
-    display: flex;
-    column-gap: 10px;
-    align-items: center;
-}
-
-.field-check input{
-    width: fit-content;
-}
-
-.field-check .check__control {
-    width: 20px;
-    height: 20px;
-}
-
-.feedback-right {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-
-.feedback-right img {
-    flex-shrink: 0;
-}
-
-.field__errors {
-    color: red;
-}
-
-input.error {
-    border: 2px solid red; /* или другой стиль по вашему выбору */
-  }
