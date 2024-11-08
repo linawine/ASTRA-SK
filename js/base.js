@@ -30,21 +30,17 @@ class FormsValidation {
     form: '[data-js-form]',
     fieldErrors: '[data-js-form-field-errors]'
   }
-
   errorMessages = {
-    valueMissing: ({ title }) => "Пожалуйста заполните это поле" || title ,
+    valueMissing: ({ title }) => title || "Пожалуйста заполните это поле"  ,
     patternMismatch: ({ title }) => title || "Пожалуйста заполните это поле",
     tooShort: ({ title }) => title,
     tooLong: ({ title }) => title,
   }
-
   constructor() {
     this.bindEvents()
   }
-
   manageErrors(fieldControlElement, errorMessages) {
     const fieldErrorsElement = fieldControlElement.parentElement.querySelector(this.selectors.fieldErrors)
-
     fieldErrorsElement.innerHTML = errorMessages
       .map((message) => `<span class="field__error">${message}</span>`)
       .join('')
@@ -55,74 +51,57 @@ class FormsValidation {
         fieldControlElement.classList.remove('error');
     }
   }
-
   validateField(fieldControlElement) {
     const errors = fieldControlElement.validity
     const errorMessages = []
-
     Object.entries(this.errorMessages).forEach(([errorType, getErrorMessage]) => {
       if (errors[errorType]) {
         errorMessages.push(getErrorMessage(fieldControlElement))
       }
     })
-
     this.manageErrors(fieldControlElement, errorMessages)
-
     const isValid = errorMessages.length === 0
-
     fieldControlElement.ariaInvalid = !isValid
-
     return isValid
   }
-
   onBlur(event) {
     const { target } = event
     const isFormField = target.closest(this.selectors.form)
     const isRequired = target.required
-
     if (isFormField && isRequired) {
       this.validateField(target)
     }
   }
-
   onChange(event) {
     const { target } = event
     const isRequired = target.required
-    const isToggleType = ['checkbox', 'radio'].includes(target.type)
-
+    const isToggleType = ['checkbox'].includes(target.type)
     if (isToggleType && isRequired) {
       this.validateField(target)
     }
   }
-
   onSubmit(event) {
     const isFormElement = event.target.matches(this.selectors.form)
     if (!isFormElement) {
       return
     }
-
     const requiredControlElements = [...event.target.elements].filter(({ required }) => required)
     let isFormValid = true
     let firstInvalidFieldControl = null
-
     requiredControlElements.forEach((element) => {
       const isFieldValid = this.validateField(element)
-
       if (!isFieldValid) {
         isFormValid = false
-
         if (!firstInvalidFieldControl) {
           firstInvalidFieldControl = element
         }
       }
     })
-
     if (!isFormValid) {
       event.preventDefault()
       firstInvalidFieldControl.focus()
     }
   }
-
   bindEvents() {
     document.addEventListener('blur', (event) => {
       this.onBlur(event)
@@ -131,101 +110,55 @@ class FormsValidation {
     document.addEventListener('submit', (event) => this.onSubmit(event))
   }
 }
-
 new FormsValidation()
-
-// Модальное окно
-
-const modalController = ({ modal, btnOpen, btnClose, time = 300, isEscapeClose = true, isClickClose = true }) => {
+const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
-
   modalElem.style.cssText = `
     display: flex;
     visibility: hidden;
     opacity: 0;
     transition: opacity ${time}ms ease-in-out;
   `;
-
   const closeModal = event => {
     const target = event.target;
-
     if (
+      target === modalElem ||
       (btnClose && target.closest(btnClose)) ||
-      (isEscapeClose && event.code === 'Escape') ||
-      (isClickClose && target === modalElem)
-    ) {
+      event.code === 'Escape'
+      ) {
+      
       modalElem.style.opacity = 0;
-
       setTimeout(() => {
         modalElem.style.visibility = 'hidden';
       }, time);
-
       window.removeEventListener('keydown', closeModal);
     }
-  };
-
+  }
   const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
-    window.addEventListener('keydown', closeModal);
+    window.addEventListener('keydown', closeModal)
   };
-
   buttonElems.forEach(btn => {
     btn.addEventListener('click', openModal);
   });
-
   modalElem.addEventListener('click', closeModal);
 };
-
 modalController({
   modal: '.modal1',
   btnOpen: '.section__button1',
   btnClose: '.modal-close',
 });
-
 modalController({
   modal: '.modal2',
   btnOpen: '.section__button2',
   btnClose: '.modal-close'
 });
 
-const successModal = document.querySelector('.modal-success');
-const openSuccessModal = () => {
-  successModal.style.visibility = 'visible';
-  successModal.style.opacity = 1;
-  window.addEventListener('keydown', closeSuccessModal);
-};
-
-const closeSuccessModal = () => {
-  successModal.style.opacity = 0;
-  setTimeout(() => {
-    successModal.style.visibility = 'hidden';
-  }, 300);
-  window.removeEventListener('keydown', closeSuccessModal);
-};
-
-successModal.addEventListener('click', closeSuccessModal);
-successModal.querySelector('.close-modal').addEventListener('click', closeSuccessModal);
-
-// Закрытие по Escape для модального окна успеха
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && successModal.style.visibility === 'visible') {
-    closeSuccessModal();
-  }
-});
-
-// Обработчик события для формы
-const form = document.getElementById('registration-form'); 
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Предотвращаем отправку формы
-
-  // Ваша логика валидации формы зде
-
-  // Закрываем модальное окно регистрации
-  closeModal('.modal-registration');
-
-  // Если форма валидна, открываем модальное окно успеха
-  openSuccessModal();
+modalController({
+  modal: '.modal-success',
+  btnOpen: null,
+  btnClose: '.сlose-modal'
 });
 

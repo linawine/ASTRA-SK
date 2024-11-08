@@ -76,6 +76,8 @@ li.furniture-object__item.list__item.active {
 
 .pluses-work-slider {
     padding-top: 20px;
+    padding-bottom: 50px;
+    position: relative;
 }
 
 .swiper-wrapper-pluses-work {
@@ -131,4 +133,40 @@ li.furniture-object__item.list__item.active {
 .swiper-button-prev.swiper-button-prev-furniture {
     left: -21px;
     z-index: 100;
+}
+
+
+.swiper-button-next-advantages,
+.swiper-button-prev-advantages {
+    display: none;
+}
+
+.swiper-button-prev-advantages,
+.swiper-button-next-advantages {
+    position: absolute;
+    top: 95%;
+    transform: translateY(-50%);
+    background-color: #FAFAFA;
+    color: var(--color-blue);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 100;
+}
+
+.swiper-button-prev-advantages.swiper-button-prev:after,
+.swiper-button-next-advantages.swiper-button-next:after {
+    font-size: 10px;
+}
+
+.swiper-button-next.swiper-button-next-advantages {
+    right: 40vw;
+}
+
+.swiper-button-prev.swiper-button-prev-advantages {
+    left: 40vw;
+}
+
+.swiper-button-prev.swiper-button-prev-advantages.swiper-button-disabled {
+    opacity: 1;
 }

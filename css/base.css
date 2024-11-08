@@ -99,7 +99,7 @@
     --font-family-accent-two: 'Gilroy', sans-serif;
 
     --container-width: 1200px;
-    --container-padding-x: 15px;
+    --container-padding-x: 20px;
 
     --transition-duration: 0.2s;
 }
@@ -622,7 +622,8 @@ input#userCom::placeholder {
         max-width: 700px;
     }
 
-    .swiper-button-next-advantages, .swiper-button-prev-advantages {
+    .swiper-button-next-advantages,
+    .swiper-button-prev-advantages {
         display: flex;
     }
 }
@@ -896,17 +897,26 @@ input#userCom::placeholder {
         height: 90px;
         width: 100%;
     }
+    
+    .vacancy-tab-nav {
+        background-color: #345E9F;
+    }
 
-    #content-1:target~.vacancy-tab-link>[href="#content-1"],
-    #content-2:target~.vacancy-tab-link>[href="#content-2"],
-    #content-3:target~.vacancy-tab-link>[href="#content-3"],
-    #content-4:target~.vacancy-tab-link>[href="#content-4"],
-    #content-5:target~.vacancy-tab-link>[href="#content-5"],
-    #content-6:target~.vacancy-tab-link>[href="#content-6"],
-    #content-7:target~.vacancy-tab-link>[href="#content-7"] {
-        cursor: default;
+    .vacancy-tab-nav-title {
         color: #FFFFFF;
-        background-color: var(--color-blue);
+    }
+    
+    .vacancy-tab-nav-subtitle {
+        color: #FFFFFF;
+    }
+    
+    .vacancy-tab-nav-text {
+       color: #FFFFFF;
+    }
+
+    .vacancy-tab-link{
+        width: 100%;
+        background-color: #345E9F;
     }
 }
 
@@ -1064,10 +1074,6 @@ input#userCom::placeholder {
         padding-top: 20px;
     }
 
-    .swiper-wrapper-advantages {
-        height: 312px;
-    }
-
     .contact-title {
         font-size: 24px;
         font-weight: 600;
@@ -1108,7 +1114,10 @@ input#userCom::placeholder {
         font-size: 14px;
         padding: 10px 0 10px 0;
     }
+
+    .furniture-title
 }
+
 
 @media (max-width: 760px) {
     .company-tabs-list {
@@ -1147,7 +1156,7 @@ input#userCom::placeholder {
     .swiper-button-next.swiper-button-next-advantages {
         right: 35vw;
     }
-    
+
     .swiper-button-prev.swiper-button-prev-advantages {
         left: 35vw;
     }
@@ -1237,5 +1246,9 @@ input#userCom::placeholder {
     .show-more-btn.blue-btn {
         max-width: 460px;
         ;
+    }
+
+    .swiper-wrapper-advantages {
+        height: 350px;
     }
 }

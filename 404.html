@@ -14,24 +14,24 @@
     <div class="header open header-normal" id="header">
         <main class="container">
             <div class="header-inner header-inner-normal">
-                <a href="index.index" class="header-logo">
+                <a href="index.html" class="header-logo">
                     <img src="./img/header/logo.svg" alt="Логотип Астра-Ск">
                 </a>
                 <nav class="header-menu">
                     <nav class="header-menu-nav">
                         <ul class="header-menu-list">
                             <li class="header-menu-item">
-                                <a href="company.index" class="header-menu-link">
+                                <a href="company.html" class="header-menu-link">
                                     О компании
                                 </a>
                             </li>
                             <li class="header-menu-item">
-                                <a href="object.index" class="header-menu-link">
+                                <a href="object.html" class="header-menu-link">
                                     Объекты
                                 </a>
                             </li>
                             <li class="header-menu-item">
-                                <a href="contact.index" class="header-menu-link">
+                                <a href="contact.html" class="header-menu-link">
                                     Контакты
                                 </a>
                             </li>
@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li class="header-menu-contact-item">
-                                <button class="header-menu-contact-link" id="openRegistrationModalBtn">
+                                <button class="header-menu-contact-link section__button1">
                                     Заказать звонок
                                 </button>
                             </li>
@@ -86,6 +86,50 @@
         </main>
     </div>
 
+      
+    <div class="modal modal1 modal-registration">
+        <div class="modal-main">
+            <button class="modal-close modal-close-tel" type="button" autofocus><img src="./img/form/close-modal.svg"
+                    alt=""></button>
+            <h2 class="modal-title">Заказать обратный звонок</h2>
+            <p class="modal-subtitle">Укажите данные и наш менеджер свяжется с Вами в ближайшее время.</p>
+
+            <form action="" novalidate data-js-form id="registration-form">
+                <p class="field">
+                    <input class="name__control" id="userName" type="text" name="userName" placeholder="Ваше имя"
+                        required minlength="3" maxlength="12" aria-errormessage="userName-errors"
+                        title="Введите корректное имя">
+                    <span class="field__errors" id="userName-errors" data-js-form-field-errors></span>
+                </p>
+                <p class="field">
+                    <input class="field__control" id="userTel" type="tel" name="userTel"
+                        placeholder="+7 (000) 000 00-00" required minlength="10" maxlength="11"
+                        aria-errormessage="userTel-errors" title="Введите корректный номер телефона">
+                    <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+                </p>
+                <p class="field">
+                    <input class="field__control" id="userEmail" type="email" name="userEmail"
+                        placeholder="Example@gmail.com" required minlength="5" maxlength="50"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" aria-errormessage="userEmail-errors"
+                        title="Введите корректный номер телефона">
+                    <span class="field__errors" id="userEmail-errors" data-js-form-field-errors></span>
+                </p>
+                <p class="field">
+                    <input class="field__control" id="userCom" type="text" name="userCom" placeholder="Комментарий"
+                        minlength="7" maxlength="50" aria-errormessage="userCom-errors">
+                    <span class="field__errors" id="userCom-errors" data-js-form-field-errors></span>
+                </p>
+                <button class="feedback-btn blue-btn" type="submit">Отправить</button>
+                <p class="field field-check">
+                    <input class="field__control check__control" id="userCheck" type="checkbox" name="userCheck"
+                        required aria-errormessage="userCheck-errors">
+                    Я ознакомлен и согласен с политикой конфиденциальности<br>
+                    <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
+                </p>
+            </form>
+        </div>
+    </div>
+
     <section class="banner-error">
         <p class="banner-error-number">
             404
@@ -113,22 +157,22 @@
                 <nav class="footer__menu">
                     <ul class="footer__menu__list">
                         <li class="footer__menu__item">
-                            <a href="company.index" class="footer__menu__link">
+                            <a href="company.html" class="footer__menu__link">
                                 О компании
                             </a>
                         </li>
                         <li class="footer__menu__item">
-                            <a href="object.index" class="footer__menu__link">
+                            <a href="object.html" class="footer__menu__link">
                                 Объекты
                             </a>
                         </li>
                         <li class="footer__menu__item">
-                            <a href="contact.index" class="footer__menu__link">
+                            <a href="contact.html" class="footer__menu__link">
                                 Контакты
                             </a>
                         </li>
                         <li class="footer__menu__item">
-                            <a href="furniture.index" class="footer__menu__link">
+                            <a href="furniture.html" class="footer__menu__link">
                                 Производство мебели
                             </a>
                         </li>
