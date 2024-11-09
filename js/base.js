@@ -31,7 +31,7 @@ class FormsValidation {
     fieldErrors: '[data-js-form-field-errors]'
   }
   errorMessages = {
-    valueMissing: ({ title }) => title || "Пожалуйста заполните это поле"  ,
+    valueMissing: ({ title }) => title || "Пожалуйста заполните это поле",
     patternMismatch: ({ title }) => title || "Пожалуйста заполните это поле",
     tooShort: ({ title }) => title,
     tooLong: ({ title }) => title,
@@ -46,9 +46,9 @@ class FormsValidation {
       .join('')
 
     if (errorMessages.length > 0) {
-        fieldControlElement.classList.add('error');
+      fieldControlElement.classList.add('error');
     } else {
-        fieldControlElement.classList.remove('error');
+      fieldControlElement.classList.remove('error');
     }
   }
   validateField(fieldControlElement) {
@@ -111,54 +111,88 @@ class FormsValidation {
   }
 }
 new FormsValidation()
-const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
+
+const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
+
+  if (!modalElem) {
+    console.error(`Ошибка: Не удалось найти модальное окно с селектором: ${modal}`);
+    return;
+  }
+
   modalElem.style.cssText = `
     display: flex;
     visibility: hidden;
     opacity: 0;
-    transition: opacity ${time}ms ease-in-out;
-  `;
+    transition: opacity ${time}ms ease-in-out;`;
   const closeModal = event => {
     const target = event.target;
     if (
       target === modalElem ||
       (btnClose && target.closest(btnClose)) ||
       event.code === 'Escape'
-      ) {
-      
+    ) {
       modalElem.style.opacity = 0;
       setTimeout(() => {
         modalElem.style.visibility = 'hidden';
       }, time);
       window.removeEventListener('keydown', closeModal);
     }
-  }
+  };
   const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
-    window.addEventListener('keydown', closeModal)
+    window.addEventListener('keydown', closeModal);
   };
   buttonElems.forEach(btn => {
     btn.addEventListener('click', openModal);
   });
   modalElem.addEventListener('click', closeModal);
 };
-modalController({
-  modal: '.modal1',
-  btnOpen: '.section__button1',
-  btnClose: '.modal-close',
-});
-modalController({
-  modal: '.modal2',
-  btnOpen: '.section__button2',
-  btnClose: '.modal-close'
-});
 
-modalController({
-  modal: '.modal-success',
-  btnOpen: null,
-  btnClose: '.сlose-modal'
-});
+// Инициализация модальных окон
+document.addEventListener('DOMContentLoaded', () => {
+  modalController({
+    modal: '.modal1',
+    btnOpen: '.section__button1',
+    btnClose: '.modal-close',
+  });
+  modalController({
+    modal: '.modal2',
+    btnOpen: '.section__button2',
+    btnClose: '.modal-close'
+  });
 
+  // Инициализация модального окна успеха
+  modalController({
+    modal: '.modal-success',
+    btnOpen: null,
+    btnClose: '.сlose-modal'
+  });
+
+  // Обработчик события для формы
+  const forms = document.querySelectorAll('[data-js-form]');
+  forms.forEach(form => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Валидация формы
+      // ... (ваш код валидации) ...
+
+      // Закрытие модальных окон регистрации
+      const modalRegistrations = document.querySelectorAll('.modal-registration');
+      modalRegistrations.forEach(modal => {
+        modal.style.opacity = 0;
+        setTimeout(() => {
+          modal.style.visibility = 'hidden';
+        }, 300);
+      });
+
+      // Открытие модального окна успеха
+      const successModal = document.querySelector('.modal-success');
+      successModal.style.visibility = 'visible';
+      successModal.style.opacity = 1;
+    });
+  });
+});
