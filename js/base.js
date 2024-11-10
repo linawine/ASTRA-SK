@@ -125,7 +125,8 @@ const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
     display: flex;
     visibility: hidden;
     opacity: 0;
-    transition: opacity ${time}ms ease-in-out;`;
+    transition: opacity ${time}ms ease-in-out;
+  `;
   const closeModal = event => {
     const target = event.target;
     if (
@@ -152,47 +153,57 @@ const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
 };
 
 // Инициализация модальных окон
-document.addEventListener('DOMContentLoaded', () => {
-  modalController({
-    modal: '.modal1',
-    btnOpen: '.section__button1',
-    btnClose: '.modal-close',
-  });
-  modalController({
-    modal: '.modal2',
-    btnOpen: '.section__button2',
-    btnClose: '.modal-close'
-  });
+modalController({
+  modal: '.modal1',
+  btnOpen: '.section__button1',
+  btnClose: '.modal-close',
+});
+modalController({
+  modal: '.modal2',
+  btnOpen: '.section__button2',
+  btnClose: '.modal-close'
+});
 
-  // Инициализация модального окна успеха
-  modalController({
-    modal: '.modal-success',
-    btnOpen: null,
-    btnClose: '.сlose-modal'
-  });
+// Инициализация модальных окон успеха
+modalController({
+  modal: '.modal-success-1',
+  btnOpen: null,
+  btnClose: '.сlose-modal'
+});
+modalController({
+  modal: '.modal-success-2',
+  btnOpen: null,
+  btnClose: '.сlose-modal'
+});
 
-  // Обработчик события для формы
-  const forms = document.querySelectorAll('[data-js-form]');
-  forms.forEach(form => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+// Обработчик события для формы
+const forms = document.querySelectorAll('[data-js-form]');
+forms.forEach(form => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-      // Валидация формы
-      // ... (ваш код валидации) ...
+    // Валидация формы
+    // ... (ваш код валидации) ...
 
-      // Закрытие модальных окон регистрации
-      const modalRegistrations = document.querySelectorAll('.modal-registration');
-      modalRegistrations.forEach(modal => {
-        modal.style.opacity = 0;
-        setTimeout(() => {
-          modal.style.visibility = 'hidden';
-        }, 300);
-      });
+    // Закрытие модальных окон регистрации
+    const modalRegistrations = document.querySelectorAll('.modal-registration');
+    modalRegistrations.forEach(modal => {
+      modal.style.opacity = 0;
+      setTimeout(() => {
+        modal.style.visibility = 'hidden';
+      }, 300);
+    });
 
-      // Открытие модального окна успеха
-      const successModal = document.querySelector('.modal-success');
+    // Открытие модального окна успеха
+    if (form.id === 'registration-form-1') {
+      const successModal = document.querySelector('.modal-success-1');
       successModal.style.visibility = 'visible';
       successModal.style.opacity = 1;
-    });
+    } else if (form.id === 'registration-form-2') {
+      const successModal = document.querySelector('.modal-success-2');
+      successModal.style.visibility = 'visible';
+      successModal.style.opacity = 1;
+    }
   });
 });
+

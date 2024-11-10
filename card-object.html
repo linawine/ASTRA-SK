@@ -252,21 +252,32 @@
                         Мы перезвоним и расскажем о направлениях недвижимости.
                     </div>
                     <div class="feedback-wrapper-form">
-                        <form action="">
-                            <div class="input-box">
-                                <input type="text" placeholder="Ваше имя" required>
-                            </div>
-                            <div class="input-box">
-                                <input type="tel" placeholder="Номер телефона" required>
-                            </div>
-                            <div class="input-box" id="comment" class="comment">
-                                <input type="text" placeholder="Коментарий" required>
-                            </div>
+                        <form action="" novalidate data-js-form>
+                            <p class="field">
+                                <input class="name__control" id="userName" type="text" name="userName"
+                                    placeholder="Ваше имя" required minlength="3" maxlength="12"
+                                    aria-errormessage="userName-errors" title="Введите корректное имя">
+                                <span class="field__errors" id="userName-errors" data-js-form-field-errors></span>
+                            </p>
+                            <p class="field">
+                                <input class="field__control" id="userTel" type="tel" name="userTel"
+                                    placeholder="Номер телефона" required minlength="10" maxlength="11"
+                                    aria-errormessage="userTel-errors" title="Введите корректный номер телефона">
+                                <span class="field__errors" id="userTel-errors" data-js-form-field-errors></span>
+                            </p>
+                            <p class="field">
+                                <input class="field__control" id="userCom" type="text" name="userCom"
+                                    placeholder="Комментарий" minlength="7" maxlength="50"
+                                    aria-errormessage="userCom-errors">
+                                <span class="field__errors" id="userCom-errors" data-js-form-field-errors></span>
+                            </p>
                             <button class="feedback-btn blue-btn" type="submit">Отправить</button>
-                            <div class="remember">
-                                <label for=""><input type="checkbox">Я ознакомлен и согласен с политикой
-                                    конфиденциальности</label>
-                            </div>
+                            <p class="field field-check feedback-hidden">
+                                <input class="field__control check__control" id="userCheck" type="checkbox"
+                                    name="userCheck" required aria-errormessage="userCheck-errors">
+                                Я ознакомлен и согласен с политикой конфиденциальности<br>
+                                <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
+                            </p>
                         </form>
                     </div>
                 </div>
@@ -277,6 +288,7 @@
             </div>
         </div>
     </section>
+
 
     <footer class="footer">
         <main class="container">

@@ -23,17 +23,15 @@ li.company-tabs-item {
 
 li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.ui-state-active {
     font-weight: 600;
-    border-bottom: 1px solid rgb(45, 45, 45);
-    color: rgba(0, 0, 0);
+    border-bottom: 1px solid var(--color-dark);
     opacity: 1;
-    padding-bottom: 5px;
 }
 
 /* О КОМПАНИИ */
 
 .company-block-slider {
     display: flex;
-    column-gap: 35px;
+    column-gap: 30px;
     padding-top: 20px;
     justify-content: center;
     position: relative;
@@ -179,9 +177,10 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
     padding-top: 20px;
 }
 
-.specialists-block-text {
-    max-width: 815px;
+.specialists-block-text p {
+    font-weight: 400;
     font-size: 20px;
+    padding-top: 20px;
 }
 
 .specialists-slider {
@@ -196,9 +195,9 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
     width: 100%;
 }
 
-.swiper-wrapper-slide-specialists {}
-
-.swiper-slide-specialists {}
+.specialists-cards {
+    position: relative;
+}
 
 .specialists-card-block {
     text-align: center;
@@ -225,6 +224,16 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
     font-weight: 400;
     padding-top: 5px;
     padding-bottom: 20px;
+}
+
+.swiper-button-next.swiper-button-next-project {
+    margin-top: 0;
+    transform: none;
+}
+
+.swiper-button-prev.swiper-button-prev-project {
+    transform: none;
+    margin-top: 0;
 }
 
 /* О КОМПАНИИ СЕКЦИЯ ПРЕИМУЩЕСТВА */
@@ -336,6 +345,7 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
 
 .best-worker-title {
     font-size: 28px;
+    font-weight: 600;
 }
 
 .best-worker-subtitle {
@@ -395,6 +405,10 @@ li.company-tabs-item.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tabs-active.u
     position: relative;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.swiper-button-best-worker {
+    display: none;
 }
 
 /* ВАКАНСИИ */
@@ -591,7 +605,10 @@ ol.vacancy-tab-list li {
 .show-more-btn {
     margin-top: 20px;
     font-family: var(--font-family-accent);
-    max-width: 180px;
+}
+
+.btn-show {
+    text-align: center;
 }
 
 /* ЛИЦЕНЗИИ И СЕРТИФИКАТЫ */

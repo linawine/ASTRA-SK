@@ -297,6 +297,10 @@ a:hover {
     column-gap: 40px;
 }
 
+.footer__menu__item {
+    font-weight: 400;
+}
+
 .footer__contact {
     display: flex;
     column-gap: 20px;
@@ -309,9 +313,18 @@ a:hover {
     column-gap: 10px;
 }
 
+.footer__contact-phone p,
+.footer__contact-mail p {
+    font-weight: 400;
+}
+
 .footer__text {
     padding-top: 20px;
     text-align: center;
+}
+
+.footer__text p {
+    font-weight: 400;
 }
 
 /* MODAL */
@@ -417,7 +430,11 @@ a:hover {
     z-index: 100;
 }
 
-.swiper-button-prev.swiper-button-prev-project.swiper-button-disabled {
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+}
+
+.swiper-button-next.swiper-button-disabled {
     opacity: 1;
 }
 
@@ -508,7 +525,8 @@ input.error {
 
 p.field.field-check {
     padding-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 input#userCom {
@@ -521,6 +539,33 @@ input#userCom::placeholder {
 
 .banner-error {
     width: 100%;
+}
+
+.error-img {
+    display: flex;
+}
+
+.error-img img {
+    width: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    /* Минимальная высота для заполнения всего экрана */
+}
+
+footer {
+    position: relative;
+    margin-bottom: -60px;
+    /* Отступ снизу для компенсации высоты подвала */
+}
+
+footer::after {
+    content: "";
+    display: block;
+    height: 60px;
+    /* Высота подвала */
 }
 
 @media (max-width: 1400px) {
@@ -890,6 +935,7 @@ input#userCom::placeholder {
 
     .vacancy-tab {
         flex-direction: column;
+        row-gap: 20px;
     }
 
     .swiper.mySwiperVacancy.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
@@ -897,7 +943,7 @@ input#userCom::placeholder {
         height: 90px;
         width: 100%;
     }
-    
+
     .vacancy-tab-nav {
         background-color: #345E9F;
     }
@@ -905,18 +951,24 @@ input#userCom::placeholder {
     .vacancy-tab-nav-title {
         color: #FFFFFF;
     }
-    
+
     .vacancy-tab-nav-subtitle {
         color: #FFFFFF;
     }
-    
+
     .vacancy-tab-nav-text {
-       color: #FFFFFF;
+        color: #FFFFFF;
     }
 
-    .vacancy-tab-link{
+    .vacancy-tab-link {
         width: 100%;
         background-color: #345E9F;
+    }
+
+    .card-object-info {
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: center;
     }
 }
 
@@ -927,7 +979,7 @@ input#userCom::placeholder {
 
     .news {
         width: fit-content;
-        margin: 0 auto;
+        margin: 20px auto;
     }
 
     .news-info-grid {
@@ -936,6 +988,10 @@ input#userCom::placeholder {
 }
 
 @media (max-width: 760px) {
+
+    .swiper-content {
+        top: 95px
+    }
 
     .mySwiperBanner {
         max-height: 430px;
@@ -1020,6 +1076,7 @@ input#userCom::placeholder {
 
     .feedback {
         margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     .footer {
@@ -1086,6 +1143,11 @@ input#userCom::placeholder {
 
     .requisites {
         margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .pluses-work {
+        margin-top: 40px;
     }
 
     .requisites-block-title-text {
@@ -1101,7 +1163,8 @@ input#userCom::placeholder {
         font-size: 20px;
     }
 
-    .modal-subtitle {
+    .modal-subtitle,
+    .furniture-text-info p {
         font-size: 14px;
     }
 
@@ -1115,7 +1178,42 @@ input#userCom::placeholder {
         padding: 10px 0 10px 0;
     }
 
-    .furniture-title
+    .feedback-hidden {
+        display: none;
+    }
+
+    .best-worker-title {
+        font-size: 24px;
+    }
+
+    .specialists-block-text p,
+    .best-worker-subtitle p {
+        font-size: 16px;
+    }
+
+    button.show-more-btn.blue-btn {
+        width: 100%;
+    }
+
+    .card-object-title,
+    .gallery-object-title,
+    .object-description-title,
+    .furniture-title,
+    .pluses-work-title {
+        font-size: 24px;
+    }
+
+    .card-object-subtitle,
+    .object-tabs-block p,
+    .furniture-text p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .gallery-object,
+    .object-description {
+        padding-top: 40px;
+    }
 }
 
 
@@ -1202,7 +1300,21 @@ input#userCom::placeholder {
         padding-top: 10px;
     }
 
+    .swiper-button-best-worker {
+        display: flex;
+    }
 
+    .card-block-best-worker {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .specialista-card-block-info p {
+        text-align: left;
+    }
 }
 
 @media (max-width: 460px) {

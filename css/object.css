@@ -95,5 +95,8 @@ li.company-object__item.list__item.active {
 .show-more-btn {
     margin-top: 20px;
     font-family: var(--font-family-accent);
-    max-width: 180px;
+}
+
+.btn-show {
+    text-align: center;
 }
