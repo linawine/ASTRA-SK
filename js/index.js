@@ -18,29 +18,29 @@ let swiperBanner = new Swiper(".mySwiperBanner", {
 / Слайдер секция о компании /
 
 var swiperCompany = new Swiper(".mySwiperCompany", {
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    mousewhell: true,
-    Keyboard: true,
-    freeMode: true,
-  });
+  navigation: {
+    prevEl: document.querySelector('.company-slider .swiper-button-prev-company'),
+    nextEl: document.querySelector('.company-slider .swiper-button-next-company'),
+  },
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  mousewhell: true,
+  Keyboard: true,
+  freeMode: true,
+});
 
-  / Слайдер из раздела проекты компании /
+/ Слайдер из раздела проекты компании /
 
 const swiperProject = new Swiper('.mySwiperProject', {
   loop: false,
   spaceBetween: 20,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    prevEl: document.querySelector('.project-slider .swiper-button-prev-project'),
+    nextEl: document.querySelector('.project-slider .swiper-button-next-project'),
   },
   slidesPerView: 1,   // When the window width is less than 600
   breakpoints: {

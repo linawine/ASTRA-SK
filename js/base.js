@@ -18,9 +18,9 @@ $(function () {
 });
 
 $("#tabs li a").click(function () {
-  var index = $(this).parent().index(); // Получаем индекс заголовка
-  $("#tabs ul").prepend($(this).closest("li")); // Перемещаем заголовок в начало списка
-  $("#tabs").tabs("option", "active", index); // Активируем вкладку с этим заголовком
+  var index = $(this).parent().index(); 
+  $("#tabs ul").prepend($(this).closest("li")); 
+  $("#tabs").tabs("option", "active", index);
 });
 
 / form /
@@ -100,6 +100,9 @@ class FormsValidation {
     if (!isFormValid) {
       event.preventDefault()
       firstInvalidFieldControl.focus()
+      event.target.reset(); 
+    } else {
+      event.target.reset(); 
     }
   }
   bindEvents() {
@@ -152,7 +155,6 @@ const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
   modalElem.addEventListener('click', closeModal);
 };
 
-// Инициализация модальных окон
 modalController({
   modal: '.modal1',
   btnOpen: '.section__button1',
@@ -164,7 +166,6 @@ modalController({
   btnClose: '.modal-close'
 });
 
-// Инициализация модальных окон успеха
 modalController({
   modal: '.modal-success-1',
   btnOpen: null,
@@ -176,16 +177,11 @@ modalController({
   btnClose: '.сlose-modal'
 });
 
-// Обработчик события для формы
 const forms = document.querySelectorAll('[data-js-form]');
 forms.forEach(form => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // Валидация формы
-    // ... (ваш код валидации) ...
-
-    // Закрытие модальных окон регистрации
     const modalRegistrations = document.querySelectorAll('.modal-registration');
     modalRegistrations.forEach(modal => {
       modal.style.opacity = 0;
@@ -194,7 +190,6 @@ forms.forEach(form => {
       }, 300);
     });
 
-    // Открытие модального окна успеха
     if (form.id === 'registration-form-1') {
       const successModal = document.querySelector('.modal-success-1');
       successModal.style.visibility = 'visible';
@@ -206,4 +201,3 @@ forms.forEach(form => {
     }
   });
 });
-

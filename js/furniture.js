@@ -18,9 +18,9 @@ var swipersaad = new Swiper(".mySwiperfurniture", {
   spaceBetween: 20,
   loop: false,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+    prevEl: document.querySelector('.furniture-slider .swiper-button-prev-furniture'),
+    nextEl: document.querySelector('.furniture-slider .swiper-button-next-furniture'),
+},
 });
 
 const filterItemsFurniture = document.querySelectorAll(".furniture-object__item");
@@ -71,7 +71,7 @@ var swiperdasd = new Swiper(".mySwiperPlusesWork", {
     },
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+    prevEl: document.querySelector('.pluses-work-slider .swiper-button-prev-advantages'),
+    nextEl: document.querySelector('.pluses-work-slider .swiper-button-next-advantages'),
+},
 });

@@ -2,8 +2,8 @@
 
 var swiperCompany = new Swiper(".mySwiperCompany", {
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        prevEl: document.querySelector('.company-slider .swiper-button-prev-company'),
+        nextEl: document.querySelector('.company-slider .swiper-button-next-company'),
     },
     spaceBetween: 30,
     loop: true,
@@ -20,8 +20,8 @@ var swiperCompany = new Swiper(".mySwiperCompany", {
 
 var swiperSpecialists = new Swiper(".mySwiperSpecialists", {
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        prevEl: document.querySelector('.specialists-slider .swiper-button-prev-project'),
+        nextEl: document.querySelector('.specialists-slider .swiper-button-next-project'),
     },
     loop: true,
     breakpoints: {
@@ -80,10 +80,10 @@ let swiper = new Swiper(".mySwiperAdvantages", {
         },  
     },  
     spaceBetween: 20,  
-    navigation: {  
-        nextEl: ".swiper-button-next",  
-        prevEl: ".swiper-button-prev",  
-    }, 
+    navigation: {
+        prevEl: document.querySelector('.advantages-slider .swiper-button-prev-advantages'),
+        nextEl: document.querySelector('.advantages-slider .swiper-button-next-advantages'),
+    },
 });
 
 / Слайдер лучшие сотрудники /
@@ -91,8 +91,8 @@ let swiper = new Swiper(".mySwiperAdvantages", {
 document.addEventListener('DOMContentLoaded', function () {
     var swipedsdr = new Swiper('.mySwiperBest-worker', {
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            prevEl: document.querySelector('.specialists-cards .swiper-button-prev-project'),
+            nextEl: document.querySelector('.specialists-cards .swiper-button-next-project'),
         },
         enabled: true,
         slidesPerView: 1,

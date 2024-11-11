@@ -88,14 +88,14 @@
         </main>
     </div>
 
-    <div class="modal modal1 modal-registration">
+    <div class="modal modal1 modal-registration hidden">
         <div class="modal-main">
             <button class="modal-close modal-close-tel" type="button" autofocus><img src="./img/form/close-modal.svg"
                     alt=""></button>
             <h2 class="modal-title">Заказать обратный звонок</h2>
             <p class="modal-subtitle">Укажите данные и наш менеджер свяжется с Вами в ближайшее время.</p>
 
-            <form action="" novalidate data-js-form id="registration-form">
+            <form action="" novalidate data-js-form data-js-form-error id="registration-form-1">
                 <p class="field">
                     <input class="name__control" id="userName" type="text" name="userName" placeholder="Ваше имя"
                         required minlength="3" maxlength="12" aria-errormessage="userName-errors"
@@ -122,8 +122,8 @@
                 </p>
                 <button class="feedback-btn blue-btn" type="submit">Отправить</button>
                 <p class="field field-check">
-                    <input class="field__control check__control" id="userCheck" type="checkbox" name="userCheck"
-                        required aria-errormessage="userCheck-errors">
+                    <input class="fieldcontrol checkcontrol" id="userCheck" type="checkbox" name="userCheck" required
+                        aria-errormessage="userCheck-errors">
                     Я ознакомлен и согласен с политикой конфиденциальности<br>
                     <span class="field__errors" id="userCheck-errors" data-js-form-field-errors></span>
                 </p>
@@ -131,11 +131,12 @@
         </div>
     </div>
 
-    <div class="modal modal-success">
-        <div class="modal-content">
-            <h2>Поздравляем!</h2>
-            <p>Вы успешно зарегистрировались!</p>
-            <button class="сlose-modal" type="button" autofocus>Закрыть</button>
+    <div class="modal modal-success-1 hidden">
+        <div class="modal-main">
+            <button class="modal-close сlose-modal" type="button" autofocus><img src="./img/header/burger-close.svg"
+                    alt=""></button>
+            <h2 class="modal-title">Вы заказали обратный звонок!</h2>
+            <p class="modal-subtitle">Наш менеджер свяжется с Вами в ближайшее время.</p>
         </div>
     </div>
 
@@ -260,9 +261,8 @@
                                         надежных и экономичных объектов в сжатые сроки.
                                     </p>
                                 </div>
-                                <button class="specialists-block-btn blue-btn" type="button">
-                                    Посмотреть всю команду
-                                </button>
+                                <button class="specialists-block-btn blue-btn" type="button"
+                                    href="worker">Посмотреть всю команду</button>
                             </div>
                             <div class="specialists-slider">
                                 <div class="swiper mySwiperSpecialists">
@@ -542,7 +542,7 @@
                 <div class="company-tabs-specialists" id="tabs-2">
                     <div class="specialists-tabs-block">
                         <div class="container">
-                            <h2 class="specialists-title">
+                            <h2 class="specialists-title" id="worker">
                                 Высококвалифицированные специалисты
                             </h2>
                             <div class="specialists-block-text">
